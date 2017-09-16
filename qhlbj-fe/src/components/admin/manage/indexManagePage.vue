@@ -57,6 +57,7 @@ export default {
 <style scoped lang='scss'>
 .index-wrapper {
     height: calc(100vh - 148px);
+    width: 100%;
     .section {
         padding: 4px;
         min-width: 68%;

@@ -156,8 +156,8 @@ export default {
   height: calc(100vh - 108px);
 }
 .layout-logo {
-	width: 100px;
-	height: 30px;
+	max-width: 35px;
+	max-height: 35px;
 	/*background: #5b6270;*/
 	border-radius: 3px;
 	float: left;
@@ -229,5 +229,11 @@ ul.left-nav {
 }
 .ivu-menu-dark {
 	  background: RGBA(70, 76, 91, .9) !important;
+}
+.vvue-slider .vvue-slider-wrapper .vvue-slider-list .vvue-slider-item img {
+	object-fix: cover;
+}
+.goods .good-card .ivu-card-body img {
+	object-fix: cover;
 }
 </style>

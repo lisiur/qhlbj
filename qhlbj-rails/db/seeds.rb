@@ -20,4 +20,4 @@ end
 
 password_digest = Digest::SHA1.hexdigest('790223lbjxhl')
 Admin.create({name: 'qhlbj', password_digest: password_digest})
-Carousel.create
+# Carousel.create
