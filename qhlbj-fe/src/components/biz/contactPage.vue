@@ -6,35 +6,35 @@
             </div>
             <div slot="done">
 							<div class="content">
-								<div class="items" v-if="!_e(contact.name)">
+								<div class="items" v-show="!_e(contact.name)">
 									<div class="label">联系人：</div>
 									<div class="value">{{contact.name}}</div>
 								</div>
-								<div class="items" v-if="!_e(contact.mobile)">
+								<div class="items" v-show="!_e(contact.mobile)">
 									<div class="label">手机号：</div>
 									<div class="value">{{contact.mobile}}</div>
 								</div>
-								<div class="items" v-if="!_e(contact.telphone)">
+								<div class="items" v-show="!_e(contact.telphone)">
 									<div class="label">固定电话：</div>
 									<div class="value">{{contact.telphone}}</div>
 								</div>
-								<div class="items" v-if="!_e(contact.email)">
+								<div class="items" v-show="!_e(contact.email)">
 									<div class="label">邮箱：</div>
 									<div class="value">{{contact.email}}</div>
 								</div>
-								<div class="items" v-if="!_e(contact.weixin)">
+								<div class="items" v-show="!_e(contact.weixin)">
 									<div class="label">微信：</div>
 									<div class="value">{{contact.weixin}}</div>
 								</div>
-								<div class="items" v-if="!_e(contact.qq)">
+								<div class="items" v-show="!_e(contact.qq)">
 									<div class="label">QQ：</div>
 									<div class="value">{{contact.qq}}</div>
 								</div>
-								<div class="items" v-if="!_e(contact.weibo)">
+								<div class="items" v-show="!_e(contact.weibo)">
 									<div class="label">微博：</div>
 									<div class="value">{{contact.weibo}}</div>
 								</div>
-								<div class="items" v-if="!_e(contact.address)">
+								<div class="items" v-show="!_e(contact.address)">
 									<div class="label">地址：</div>
 									<div class="value">{{contact.address}}</div>
 								</div>
