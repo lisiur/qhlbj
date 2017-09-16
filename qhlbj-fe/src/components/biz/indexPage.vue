@@ -142,6 +142,7 @@ export default {
 	padding: 16px;
 	h2 {
 		margin-top: 15px;
+		padding-left: 50px;
 		color: white;
 		font-size: 20px;
 	}
@@ -151,7 +152,7 @@ export default {
 	display: flex;
 	flex-flow: row wrap;
 	align-content: flex-start;
-	justify-content: flex-start;
+	justify-content: center;
 	padding-bottom: 60px;
 	.good-card {
 		display: inline-block;
