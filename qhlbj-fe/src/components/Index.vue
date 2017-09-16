@@ -231,9 +231,9 @@ ul.left-nav {
 	  background: RGBA(70, 76, 91, .9) !important;
 }
 .vvue-slider .vvue-slider-wrapper .vvue-slider-list .vvue-slider-item img {
-	object-fix: cover;
+	object-fit: cover;
 }
 .goods .good-card .ivu-card-body img {
-	object-fix: cover;
+	object-fit: cover;
 }
 </style>
