@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170805022228) do
+ActiveRecord::Schema.define(version: 20170916013834) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name"
     t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "carousels", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,6 +51,7 @@ ActiveRecord::Schema.define(version: 20170805022228) do
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "carousel_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -65,6 +71,11 @@ ActiveRecord::Schema.define(version: 20170805022228) do
   create_table "messages", force: :cascade do |t|
     t.string "name"
     t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "recommends", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

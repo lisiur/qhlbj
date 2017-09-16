@@ -3,6 +3,7 @@ categories = %w( 枸杞 冬虫夏草 )
 Category.destroy_all
 Good.destroy_all
 Admin.destroy_all
+Carousel.destroy_all
 
 for cate in categories
 	curCate = Category.find_or_create_by( { name: cate } )
@@ -17,5 +18,6 @@ for cate in categories
 	end
 end
 
-password_digest = Digest::SHA1.hexdigest('qhlbj')
+password_digest = Digest::SHA1.hexdigest('790223lbjxhl')
 Admin.create({name: 'qhlbj', password_digest: password_digest})
+Carousel.create()

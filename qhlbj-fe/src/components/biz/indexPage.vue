@@ -3,11 +3,11 @@
         <v-layout class="layout-content" body-clz="layout-body">
             <div class="layout-content-main">
                 <div class="content-header">
-                    <v-slider class="content-slider" width="650px" height="400px" auto
+                    <v-slider v-if="showSlider" class="content-slider" width="650px" height="400px" auto
                               :source="sliderSource"></v-slider>
                 </div>
                 <div class="content-section">
-									<h2>{{selectedCate ? selectedCate.name : "店长推荐" }}</h2>
+					<h2>{{selectedCate ? selectedCate.name : "店长推荐" }}</h2>
                     <div class="goods">
                         <template v-for="good in goods">
                             <Card class="good-card" :padding="0">
@@ -29,21 +29,15 @@
 </template>
 
 <script>
-import images from '@/assets'
 import API from '../../libs/api.js'
 import CONST from '../../../constant.js'
 export default {
 	data: () => ({
 		model: 4.5,
-		sliderSource: images,
-		goods: images.map(item => ({
-			id: '1',
-			title: '枸杞',
-			rate: 4,
-			image: item,
-			introduction: '介绍，介绍，介绍'
-		})),
+		sliderSource: [],
+		goods: [],
 		selectedCate: null,
+		showSlider: false
 	}),
 	methods: {
 		getGoods(cate) {
@@ -52,7 +46,6 @@ export default {
 			})
 			  .then(res => res.body)
 				.then(res => {
-					console.log(res)
 					this.goods = res.map(item => ({
 						id: item.id,
 						title: item.name,
@@ -63,11 +56,9 @@ export default {
 				})
 		},
 		viewGood(good) {
-      // this.$router.push({name: 'good', params: {id: good.id}})
-      window.open(window.location.origin + '/#/good/' + good.id)
+			// this.$router.push({name: 'good', params: {id: good.id}})
+			window.open(window.location.origin + '/#/good/' + good.id)
 		},
-	},
-	created() {
 	},
 	watch: {
 		selectedCate: function(cate) {
@@ -75,6 +66,17 @@ export default {
 		}
 	},
 	created() {
+		this.GET(API.carousels).then(res => res.body).then(goods => {
+			this.goods = goods.map(item => ({
+				id: item.id,
+				title: item.name,
+				rate: 5,
+				image: item.avatar && `${CONST.proxy}${item.avatar}`,
+				introduction: item.description,
+			}))
+			this.sliderSource = this.goods.map(item => item.image)
+			this.showSlider = true
+		})
 	}
 }
 </script>

@@ -10,4 +10,6 @@ export default {
   testLogin: `${proxy}/admin/test`,
   categories: `${proxy}/categories`,
   addGoodsToCate: `${proxy}/categories/addGoods`,
+  carousels: `${proxy}/carousels`,
+  updateCarousels: `${proxy}/carousels/updateGoods`,
 }

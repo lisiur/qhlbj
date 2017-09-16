@@ -1,3 +1,3 @@
 export default {
-	proxy: window.location.origin || 'http://172.20.4.77:3000'
+	proxy: (process.env.NODE_ENV === 'development' ? 'http://192.168.31.110:3000' : window.location.origin)
 }

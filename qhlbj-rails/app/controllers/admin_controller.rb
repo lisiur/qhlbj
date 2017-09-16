@@ -31,8 +31,8 @@ class AdminController < ApplicationController
   end
 
 	private
-	  def set_admin
-			@admin = Admin.where({name: params['username'], password_digest: params['password']})
+    def set_admin
+			@admin = Admin.where({name: params['username'], password_digest: params['password']}).take
 		end
 
 		def admin_params

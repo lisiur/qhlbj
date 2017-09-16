@@ -67,7 +67,7 @@
       this.currentNav = this.$route.name
 
       if (this.currentNav === 'manage') {
-        this.linkToNav('goodManage')
+        this.linkToNav('indexManage')
       }
     },
   }

@@ -57,7 +57,7 @@
 				<router-view></router-view>
 			</div>
 			<footer class="footer">
-				<div class="layout-copy">
+				<div class="layout-copy ivu-menu-dark">
 					2013-2017 &copy; QingHaiLiBaiJia
 				</div>
 			</footer>
@@ -65,6 +65,7 @@
 </template>
 <script>
 const logo = require('@/assets/logo.png')
+import CONST from '../../constant.js'
 export default {
 	data: () => ({
 		logo: logo,
@@ -108,6 +109,9 @@ export default {
 		const self = this
 		this.currentNav = this.$route.name
 		this.getCategories()
+		this.GET(this.API.info).then(res => res.body).then(res => {
+			this.logo = CONST.proxy + res.logo
+		})
 	},
 	mounted() {
 		if (this.$route.name !== 'index') {
@@ -125,9 +129,9 @@ export default {
 }
 .layout-content-navigator {
 	position: fixed;
-	top: 60px;
+	top: 83px;
 	left: 0;
-	bottom: 0;
+	bottom: 30px;
 	padding-bottom: 40px;
 	display: none;
 	z-index: 20;
@@ -222,5 +226,8 @@ ul.left-nav {
 	.vvue-pretty-scroll-inner-wrapper {
 		padding-bottom: 0 !important;
 	}
+}
+.ivu-menu-dark {
+	  background: RGBA(70, 76, 91, .9) !important;
 }
 </style>
