@@ -34,6 +34,10 @@
 									<div class="label">微博：</div>
 									<div class="value">{{contact.weibo}}</div>
 								</div>
+								<div class="items" v-if="!_e(contact.address)">
+									<div class="label">地址：</div>
+									<div class="value">{{contact.address}}</div>
+								</div>
 							</div>
             </div>
             <div slot="fail">

@@ -55,6 +55,19 @@ export default {
 					}))
 				})
 		},
+		getCarousels() {
+			this.GET(API.carousels).then(res => res.body).then(goods => {
+				this.goods = goods.map(item => ({
+					id: item.id,
+					title: item.name,
+					rate: 5,
+					image: item.avatar && `${CONST.proxy}${item.avatar}`,
+					introduction: item.description,
+				}))
+				this.sliderSource = this.goods.map(item => item.image)
+				this.showSlider = true
+			})
+		},
 		viewGood(good) {
 			// this.$router.push({name: 'good', params: {id: good.id}})
 			window.open(window.location.origin + '/#/good/' + good.id)
@@ -62,21 +75,15 @@ export default {
 	},
 	watch: {
 		selectedCate: function(cate) {
-			this.getGoods(cate)
+			if (cate.id === '__recmmend__') {
+				this.getCarousels()
+			} else {
+				this.getGoods(cate)
+			}
 		}
 	},
 	created() {
-		this.GET(API.carousels).then(res => res.body).then(goods => {
-			this.goods = goods.map(item => ({
-				id: item.id,
-				title: item.name,
-				rate: 5,
-				image: item.avatar && `${CONST.proxy}${item.avatar}`,
-				introduction: item.description,
-			}))
-			this.sliderSource = this.goods.map(item => item.image)
-			this.showSlider = true
-		})
+		this.getCarousels()
 	}
 }
 </script>

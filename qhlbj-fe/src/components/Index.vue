@@ -37,6 +37,7 @@
 								<v-spin></v-spin>
 							</div>
 							<div slot="done">
+								<Menu-item :name="JSON.stringify({id:'__recmmend__', name: '店长推荐'})">店长推荐</Menu-item>
 								<template v-for="cate in categories">
 									<Submenu :name="JSON.stringify(cate)">
 										<template slot="title">{{ cate.name }}</template>
