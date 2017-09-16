@@ -237,4 +237,7 @@ ul.left-nav {
 .goods .good-card .ivu-card-body img {
 	object-fit: cover;
 }
+.wrapper .good-wrapper .meta-info .left img {
+	object-fit: cover;
+}
 </style>
