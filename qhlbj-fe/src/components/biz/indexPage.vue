@@ -8,7 +8,7 @@
                 </div>
                 <div class="content-section">
 					<h2>{{selectedCate ? selectedCate.name : "店长推荐" }}</h2>
-                    <div class="goods">
+                    <div class="goods" :class="{recmmend: !selectedCate || selectedCate.id==='__recmmend__'}">
                         <template v-for="good in goods">
                             <Card class="good-card" :padding="0">
                                 <p slot="title">{{ good.title }}</p>
@@ -142,7 +142,6 @@ export default {
 	padding: 16px;
 	h2 {
 		margin-top: 15px;
-		padding-left: 50px;
 		color: white;
 		font-size: 20px;
 	}
@@ -152,8 +151,12 @@ export default {
 	display: flex;
 	flex-flow: row wrap;
 	align-content: flex-start;
-	justify-content: center;
+	justify-content: flex-start;
 	padding-bottom: 60px;
+	padding-left: 40px;
+	&.recmmend {
+		// justify-content: center;
+	}
 	.good-card {
 		display: inline-block;
 		margin-top: 20px;
