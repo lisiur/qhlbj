@@ -6,6 +6,9 @@
 					<div class="layout-logo">
 						<img :src="logo" alt="">
 					</div>
+					<div class="layout-name">
+						青海利百家
+					</div>
 					<div class="layout-nav">
 						<Menu-item name="index">
 							<Icon type="ios-navigate"></Icon>
@@ -59,7 +62,7 @@
 			</div>
 			<footer class="footer">
 				<div class="layout-copy ivu-menu-dark">
-					2013-2017 &copy; QingHaiLiBaiJia
+					2013-{{new Date().getFullYear()}} &copy; 青海利百家
 				</div>
 			</footer>
 	</div>
@@ -203,6 +206,13 @@ ul.left-nav {
 	color: #9ea7b4;
 	background: #464C5B;
 	z-index: 99;
+}
+
+.layout-name {
+	position: absolute;
+	left: 100px;
+	font-size: 20px;
+	color: white;
 }
 </style>
 <style>

@@ -97,12 +97,13 @@ export default {
 	flex-direction: column;
 	justify-content: center;
 	min-height: calc(100vh - 108px);
+	padding: 60px 210px;
 	.items {
 		width: 100%;
 		height: 60px;
 		display: flex;
 		align-items: flex-start;
-		justify-content: center;
+		// justify-content: center;
 		.label {
 
 		}
